@@ -1,0 +1,14 @@
+{
+  "auto_open": true,
+  "backup": true,
+  "verbose": false,
+  "theme": "Professional",
+  "font_size": 11,
+  "speed": "Normal",
+  "memory": "Balanced",
+  "discord_enabled": true,
+  "mobile_companion": true,
+  "debug": true,
+  "auto_update": true,
+  "experimental": true
+}
