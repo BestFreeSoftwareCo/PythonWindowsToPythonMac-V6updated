@@ -14,49 +14,57 @@ from pathlib import Path
 
 class SuccessOptimizer:
     def __init__(self):
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         self.optimizations = []
         self.applied_optimizations = []
         self.system_score = 0
-        
+
     def analyze_and_optimize(self):
         """Analyze system and apply optimizations"""
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         print("🚀 Analyzing system for optimization opportunities...")
-        
+
         # Detect optimization opportunities
         self.detect_optimizations()
-        
+
         # Apply safe optimizations automatically
         self.apply_safe_optimizations()
-        
+
         # Suggest manual optimizations
         self.suggest_manual_optimizations()
-        
+
         # Calculate final score
         self.calculate_success_score()
-        
+
         return self.generate_optimization_report()
-    
+
     def detect_optimizations(self):
         """Detect possible optimizations"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         # Python environment optimizations
         self.check_python_optimizations()
-        
+
         # Package management optimizations
         self.check_package_optimizations()
-        
+
         # System performance optimizations
         self.check_performance_optimizations()
-        
+
         # macOS specific optimizations
         self.check_macos_optimizations()
-        
+
         # Network optimizations
         self.check_network_optimizations()
-    
+
     def check_python_optimizations(self):
         """Check Python environment optimizations"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         # Check Python version
         version = sys.version_info
         if version < (3, 11):
@@ -69,7 +77,7 @@ class SuccessOptimizer:
                 'command': 'brew install python@3.11',
                 'auto_apply': False
             })
-        
+
         # Check if using system Python vs Homebrew
         python_path = sys.executable
         if '/usr/bin/python' in python_path:
@@ -82,10 +90,10 @@ class SuccessOptimizer:
                 'command': 'brew install python@3.11 && export PATH="/opt/homebrew/bin:$PATH"',
                 'auto_apply': False
             })
-        
+
         # Check pip version
         try:
-            result = subprocess.run([sys.executable, '-m', 'pip', '--version'], 
+            result = subprocess.run([sys.executable, '-m', 'pip', '--version'],
                                   capture_output=True, text=True)
             if result.returncode == 0:
                 pip_version = result.stdout.split()[1]
@@ -100,14 +108,17 @@ class SuccessOptimizer:
                         'auto_apply': True
                     })
         except Exception as e:
-            pass
-    
+                    print(f"Error: {e}")
+                    # Log error for debugging
+
     def check_package_optimizations(self):
         """Check package management optimizations"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         # Check for conflicting packages
         try:
-            result = subprocess.run([sys.executable, '-m', 'pip', 'check'], 
+            result = subprocess.run([sys.executable, '-m', 'pip', 'check'],
                                   capture_output=True, text=True)
             if result.returncode != 0 and result.stdout.strip():
                 self.optimizations.append({
@@ -121,14 +132,15 @@ class SuccessOptimizer:
                     'details': result.stdout
                 })
         except Exception as e:
-            pass
-        
+                    print(f"Error: {e}")
+                    # Log error for debugging
+
         # Check pip cache size
         try:
-            cache_dir = subprocess.run([sys.executable, '-m', 'pip', 'cache', 'dir'], 
+            cache_dir = subprocess.run([sys.executable, '-m', 'pip', 'cache', 'dir'],
                                      capture_output=True, text=True)
             if cache_dir.returncode == 0:
-                cache_path = Path(cache_dir.stdout.strip())
+                cache_path = Path(cache_dir.stdout.strip().resolve())
                 if cache_path.exists():
                     cache_size = sum(f.stat().st_size for f in cache_path.rglob('*') if f.is_file())
                     if cache_size > 1024**3:  # 1GB
@@ -142,16 +154,23 @@ class SuccessOptimizer:
                             'auto_apply': True
                         })
         except Exception as e:
-            pass
-    
+                    print(f"Error: {e}")
+                    # Log error for debugging
+
     def check_performance_optimizations(self):
         """Check system performance optimizations"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         # Check available memory
         try:
-            import psutil
+            try:
+    import psutil
+except ImportError:
+    psutil = None
+    print("Warning: psutil module not available - some features disabled")
             memory = psutil.virtual_memory()
-            
+
             if memory.percent > 85:
                 self.optimizations.append({
                     'type': 'memory_usage',
@@ -162,7 +181,7 @@ class SuccessOptimizer:
                     'command': 'Close unnecessary applications',
                     'auto_apply': False
                 })
-            
+
             # Check swap usage
             swap = psutil.swap_memory()
             if swap.percent > 50:
@@ -177,12 +196,12 @@ class SuccessOptimizer:
                 })
         except ImportError:
             pass
-        
+
         # Check disk space
         import shutil
         disk_usage = shutil.disk_usage('/')
         free_gb = disk_usage.free / (1024**3)
-        
+
         if free_gb < 2:
             self.optimizations.append({
                 'type': 'disk_space',
@@ -203,10 +222,12 @@ class SuccessOptimizer:
                 'command': 'Free up more disk space',
                 'auto_apply': False
             })
-    
+
     def check_macos_optimizations(self):
         """Check macOS specific optimizations"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         # Check Xcode Command Line Tools
         try:
             result = subprocess.run(['xcode-select', '-p'], capture_output=True)
@@ -221,8 +242,9 @@ class SuccessOptimizer:
                     'auto_apply': False
                 })
         except Exception as e:
-            pass
-        
+                    print(f"Error: {e}")
+                    # Log error for debugging
+
         # Check Homebrew
         try:
             result = subprocess.run(['brew', '--version'], capture_output=True)
@@ -251,10 +273,12 @@ class SuccessOptimizer:
                             'auto_apply': False
                         })
                 except Exception as e:
-                    pass
+                    print(f"Error: {e}")
+                    # Log error for debugging
         except Exception as e:
-            pass
-        
+                    print(f"Error: {e}")
+                    # Log error for debugging
+
         # Check for Apple Silicon optimizations
         if platform.machine() == 'arm64':
             # Check if using native Python
@@ -268,17 +292,19 @@ class SuccessOptimizer:
                     'command': 'Install native ARM64 Python from python.org or Homebrew',
                     'auto_apply': False
                 })
-    
+
     def check_network_optimizations(self):
         """Check network optimizations"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         # Test PyPI connectivity
         try:
             import urllib.request
             start_time = time.time()
             urllib.request.urlopen('https://pypi.org', timeout=10)
             response_time = time.time() - start_time
-            
+
             if response_time > 5:
                 self.optimizations.append({
                     'type': 'network_speed',
@@ -299,42 +325,46 @@ class SuccessOptimizer:
                 'command': 'Connect to the internet',
                 'auto_apply': False
             })
-    
+
     def apply_safe_optimizations(self):
         """Apply optimizations that are safe to run automatically"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         for opt in self.optimizations:
             if opt.get('auto_apply', False):
                 print(f"🔧 Applying: {opt['title']}")
-                
+
                 try:
                     if opt['type'] == 'pip_upgrade':
                         subprocess.run(opt['command'].split(), check=True, capture_output=True)
                         self.applied_optimizations.append(opt)
                         print(f"✅ Applied: {opt['title']}")
-                    
+
                     elif opt['type'] == 'pip_cache':
                         subprocess.run(opt['command'].split(), check=True, capture_output=True)
                         self.applied_optimizations.append(opt)
                         print(f"✅ Applied: {opt['title']}")
-                        
+
                 except subprocess.CalledProcessError as e:
                     print(f"❌ Failed to apply {opt['title']}: {e}")
                 except Exception as e:
                     print(f"⚠️ Error applying {opt['title']}: {e}")
-    
+
     def suggest_manual_optimizations(self):
         """Suggest manual optimizations to user"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         manual_opts = [opt for opt in self.optimizations if not opt.get('auto_apply', False)]
-        
+
         if manual_opts:
             print("\n📋 Manual optimizations recommended:")
-            
+
             # Sort by priority
             priority_order = {'critical': 0, 'high': 1, 'medium': 2, 'low': 3}
             manual_opts.sort(key=lambda x: priority_order.get(x['priority'], 4))
-            
+
             for opt in manual_opts:
                 priority_emoji = {
                     'critical': '🚨',
@@ -342,16 +372,18 @@ class SuccessOptimizer:
                     'medium': '💡',
                     'low': 'ℹ️'
                 }
-                
+
                 print(f"\n{priority_emoji.get(opt['priority'], '•')} {opt['title']}")
                 print(f"   Description: {opt['description']}")
                 print(f"   Benefit: {opt['benefit']}")
                 print(f"   Command: {opt['command']}")
-    
+
     def calculate_success_score(self):
         """Calculate predicted success score"""
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         base_score = 70  # Base success rate
-        
+
         # Add points for applied optimizations
         for opt in self.applied_optimizations:
             if opt['priority'] == 'high':
@@ -360,7 +392,7 @@ class SuccessOptimizer:
                 base_score += 3
             elif opt['priority'] == 'low':
                 base_score += 1
-        
+
         # Deduct points for unresolved issues
         for opt in self.optimizations:
             if opt not in self.applied_optimizations:
@@ -370,12 +402,14 @@ class SuccessOptimizer:
                     base_score -= 10
                 elif opt['priority'] == 'medium':
                     base_score -= 5
-        
+
         self.system_score = max(0, min(100, base_score))
-    
+
     def generate_optimization_report(self):
         """Generate comprehensive optimization report"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         report = {
             'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
             'system_score': self.system_score,
@@ -386,14 +420,16 @@ class SuccessOptimizer:
             'applied': self.applied_optimizations,
             'recommendations': self.generate_recommendations()
         }
-        
+
         return report
-    
+
     def generate_recommendations(self):
         """Generate specific recommendations based on analysis"""
-        
+
+        if not all([self]):
+            raise ValueError("Invalid parameters")
         recommendations = []
-        
+
         if self.system_score >= 95:
             recommendations.append({
                 'type': 'excellent',
@@ -414,7 +450,7 @@ class SuccessOptimizer:
                 'type': 'poor',
                 'message': 'Several optimizations needed for reliable operation. Expected success rate: <75%.'
             })
-        
+
         # Specific recommendations
         critical_issues = [opt for opt in self.optimizations if opt['priority'] == 'critical']
         if critical_issues:
@@ -422,18 +458,20 @@ class SuccessOptimizer:
                 'type': 'critical',
                 'message': f'CRITICAL: {len(critical_issues)} critical issues must be resolved before proceeding.'
             })
-        
+
         high_priority = [opt for opt in self.optimizations if opt['priority'] == 'high']
         if high_priority:
             recommendations.append({
                 'type': 'high_priority',
                 'message': f'Recommended: Address {len(high_priority)} high-priority optimizations for best results.'
             })
-        
+
         return recommendations
 
 def optimize_system():
     """Run system optimization"""
+    if not all([]):
+        raise ValueError("Invalid parameters")
     optimizer = SuccessOptimizer()
     return optimizer.analyze_and_optimize()
 

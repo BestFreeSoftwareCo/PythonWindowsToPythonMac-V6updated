@@ -1,47 +1,27 @@
 {
-  "timestamp": "2025-11-08 10:41:17",
+  "timestamp": "2025-11-08 17:48:11",
   "summary": {
-    "bugs_found": 37,
+    "bugs_found": 20,
     "bugs_fixed": 0,
     "warnings": 0,
     "suggestions": 0
   },
   "bugs": [
     {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
-      "line": 190,
-      "type": "eval_usage",
-      "severity": "high",
-      "description": "# eval()  # Disabled for security usage is dangerous",
-      "code": "if 'eval(' in content and 'security_issues' not in content:",
-      "match": "eval("
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\advanced_bug_fixer.py",
+      "line": 166,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: unterminated string literal (detected at line 166)",
+      "code": "                if 'try:"
     },
     {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
-      "line": 194,
-      "type": "eval_usage",
-      "severity": "high",
-      "description": "# eval()  # Disabled for security usage is dangerous",
-      "code": "r'# eval(\\1)  # Disabled for security',",
-      "match": "eval("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
-      "line": 31,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "content = re.sub(r'C:\\\\\\\\[^\"\\']*', 'Path.home() / \"converted_path\"', content)",
-      "match": "'C:\\\\"
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
-      "line": 32,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "content = re.sub(r'\"C:\\\\[^\"]*\"', 'str(Path.home() / \"converted_path\")', content)",
-      "match": "\"C:\\\\"
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\launch_irus.py",
+      "line": 70,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "code": "    if not all([title, message, details=None]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_irus_v6.py",
@@ -52,116 +32,40 @@
       "code": "webhook functionality"
     },
     {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 107,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.label.config(text=text)",
-      "match": "self.label.config("
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\interactive_tutorial.py",
+      "line": 426,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "code": "            if not all([index=0]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 112,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.line_info.config(text=line_text)",
-      "match": "self.line_info.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 151,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=status)",
-      "match": "self.status_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 153,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(foreground=color)",
-      "match": "self.status_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 2452,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=message)",
-      "match": "self.status_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 2910,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.font_size_label.config(text=f\"Current: {size}pt\")",
-      "match": "self.font_size_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 738,
-      "type": "unclosed_files",
-      "severity": "medium",
-      "description": "Files should be opened with context managers",
-      "code": "webbrowser.open(\"https://discord.gg/j6wtpGJVng\")",
-      "match": "open(\"https://discord.gg/j6wtpGJVng\")"
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 1901,
-      "type": "eval_usage",
-      "severity": "high",
-      "description": "# eval()  # Disabled for security usage is dangerous",
-      "code": "security_issues = ['eval(', 'exec(', 'shell=True']",
-      "match": "eval("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
-      "line": 1312,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "disk_path = 'C:\\\\' if IS_WINDOWS else '/'",
-      "match": "'C:\\\\"
+      "line": 73,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax",
+      "code": "        if not all([self, parent, **kwargs]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
-      "line": 166,
-      "type": "eval_usage",
-      "severity": "high",
-      "description": "# eval()  # Disabled for security usage is dangerous",
-      "code": "'eval(',",
-      "match": "eval("
+      "line": 135,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: unterminated string literal (detected at line 135)",
+      "code": "                    'cv2': 'try:"
     },
     {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
-      "line": 466,
-      "type": "eval_usage",
-      "severity": "high",
-      "description": "# eval()  # Disabled for security usage is dangerous",
-      "code": "'replacement': '# eval() removed for security - implement safe alternative'",
-      "match": "eval("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
-      "line": 404,
-      "type": "inefficient_loops",
-      "severity": "low",
-      "description": "Use enumerate() instead of range(len())",
-      "code": "for i in range(len(items)):",
-      "match": "for i in range(len("
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_assistant.py",
+      "line": 108,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax",
+      "code": "        if not all([self, session_data: Dict]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
-      "line": 410,
+      "line": 431,
       "type": "eval_usage",
       "severity": "high",
       "description": "# eval()  # Disabled for security usage is dangerous",
@@ -170,70 +74,23 @@
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 319,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=\"Queue cleared\")",
-      "match": "self.status_label.config("
+      "line": 32,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "code": "        if not all([self, file_paths, target_system=\"macOS\"]):"
     },
     {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 342,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.convert_btn.config(state='disabled', text=\"Converting...\")",
-      "match": "self.convert_btn.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 356,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=f\"Converting: {filename} ({completed}/{total})\")",
-      "match": "self.status_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 363,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.convert_btn.config(state='normal', text=\"\ud83d\ude80 Start Batch Conversion\")",
-      "match": "self.convert_btn.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 365,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=f\"Complete! {summary['completed']}/{summary['total_queued']} files converted\")",
-      "match": "self.status_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 139,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "'C:\\\\': '/Users/'",
-      "match": "'C:\\\\"
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
-      "line": 151,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "'C:\\\\': '/home/'",
-      "match": "'C:\\\\"
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\bug_reporter.py",
+      "line": 73,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: expected an indented block after 'try' statement on line 72",
+      "code": "    import psutil"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\comprehensive_bug_hunter.py",
-      "line": 74,
+      "line": 76,
       "type": "eval_usage",
       "severity": "high",
       "description": "# eval()  # Disabled for security usage is dangerous",
@@ -241,98 +98,72 @@
       "match": "eval("
     },
     {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\macos_optimizer.py",
-      "line": 205,
-      "type": "eval_usage",
-      "severity": "high",
-      "description": "# eval()  # Disabled for security usage is dangerous",
-      "code": "if 'eval(' in code or 'exec(' in code:",
-      "match": "eval("
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\discord_integration.py",
+      "line": 336,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax",
+      "code": "        if not all([self, webhook_url: str]):"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\enhanced_converter.py",
+      "line": 92,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: unterminated string literal (detected at line 92)",
+      "code": "                '# Screen capture - converted to Quartz\\nfrom Quartz import CGWindowListCopyWindowInfo,"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\feedback_system.py",
+      "line": 24,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "code": "        if not all([self, parent, callback=None, **kwargs]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\macos_optimizer.py",
-      "line": 317,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "path = \"C:\\\\\\\\Users\\\\\\\\test\\\\\\\\file.txt\"",
-      "match": "\"C:\\\\"
+      "line": 175,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: unterminated string literal (detected at line 175)",
+      "code": "        if 'cv2.' in code and 'try:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\mobile_companion.py",
+      "line": 294,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax",
+      "code": "        if not all([self, status_type: str, details: Dict = None]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
-      "line": 366,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.start_btn.config(state='disabled')",
-      "match": "self.start_btn.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
-      "line": 367,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.stop_btn.config(state='normal')",
-      "match": "self.stop_btn.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
-      "line": 368,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=\"Monitoring active...\")",
-      "match": "self.status_label.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
-      "line": 373,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.start_btn.config(state='normal')",
-      "match": "self.start_btn.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
-      "line": 374,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.stop_btn.config(state='disabled')",
-      "match": "self.stop_btn.config("
-    },
-    {
-      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
-      "line": 375,
-      "type": "ui_thread_access",
-      "severity": "medium",
-      "description": "Potential UI access from wrong thread",
-      "code": "self.status_label.config(text=\"Monitoring stopped\")",
-      "match": "self.status_label.config("
+      "line": 45,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "code": "        if not all([self, interval=1.0]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
-      "line": 279,
-      "type": "unclosed_files",
-      "severity": "medium",
-      "description": "Files should be opened with context managers",
-      "code": "urllib.request.urlopen('https://pypi.org', timeout=10)",
-      "match": "open('https://pypi.org', timeout=10)"
+      "line": 168,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: expected an indented block after 'try' statement on line 167",
+      "code": "    import psutil"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\template_manager.py",
-      "line": 60,
-      "type": "windows_paths",
-      "severity": "high",
-      "description": "Windows-specific paths need conversion",
-      "code": "\"pattern\": r\"C:\\\\\\\\\",",
-      "match": "\"C:\\\\"
+      "line": 517,
+      "type": "syntax_error",
+      "severity": "critical",
+      "description": "Syntax error: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "code": "        if not all([self, title, item_id=None]):"
     },
     {
       "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ultra_validator.py",
-      "line": 297,
+      "line": 313,
       "type": "unclosed_files",
       "severity": "medium",
       "description": "Files should be opened with context managers",
