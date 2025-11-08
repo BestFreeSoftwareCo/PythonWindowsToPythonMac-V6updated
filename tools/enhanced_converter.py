@@ -1,3 +1,4 @@
+import time
 #!/usr/bin/env python3
 """
 IRUS V4 - Enhanced Script Converter
@@ -386,7 +387,7 @@ def get_display_scale_factor():
             pixel_width = Quartz.CGDisplayModeGetPixelWidth(mode)
             width = Quartz.CGDisplayModeGetWidth(mode)
             return pixel_width / width if width > 0 else 1.0
-    except:
+    except Exception as e:
         pass
     return 1.0
 

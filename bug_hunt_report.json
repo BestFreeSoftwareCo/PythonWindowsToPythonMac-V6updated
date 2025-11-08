@@ -1,0 +1,346 @@
+{
+  "timestamp": "2025-11-08 10:41:17",
+  "summary": {
+    "bugs_found": 37,
+    "bugs_fixed": 0,
+    "warnings": 0,
+    "suggestions": 0
+  },
+  "bugs": [
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
+      "line": 190,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "if 'eval(' in content and 'security_issues' not in content:",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
+      "line": 194,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "r'# eval(\\1)  # Disabled for security',",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
+      "line": 31,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "content = re.sub(r'C:\\\\\\\\[^\"\\']*', 'Path.home() / \"converted_path\"', content)",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\auto_bug_fixer.py",
+      "line": 32,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "content = re.sub(r'\"C:\\\\[^\"]*\"', 'str(Path.home() / \"converted_path\")', content)",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_irus_v6.py",
+      "line": 0,
+      "type": "missing_dependency",
+      "severity": "medium",
+      "description": "Discord webhook requires requests module",
+      "code": "webhook functionality"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 107,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.label.config(text=text)",
+      "match": "self.label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 112,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.line_info.config(text=line_text)",
+      "match": "self.line_info.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 151,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=status)",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 153,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(foreground=color)",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2452,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=message)",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2910,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.font_size_label.config(text=f\"Current: {size}pt\")",
+      "match": "self.font_size_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 738,
+      "type": "unclosed_files",
+      "severity": "medium",
+      "description": "Files should be opened with context managers",
+      "code": "webbrowser.open(\"https://discord.gg/j6wtpGJVng\")",
+      "match": "open(\"https://discord.gg/j6wtpGJVng\")"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 1901,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "security_issues = ['eval(', 'exec(', 'shell=True']",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 1312,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "disk_path = 'C:\\\\' if IS_WINDOWS else '/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 166,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "'eval(',",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 466,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "'replacement': '# eval() removed for security - implement safe alternative'",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
+      "line": 404,
+      "type": "inefficient_loops",
+      "severity": "low",
+      "description": "Use enumerate() instead of range(len())",
+      "code": "for i in range(len(items)):",
+      "match": "for i in range(len("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
+      "line": 410,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "return eval(user_input)",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 319,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=\"Queue cleared\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 342,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.convert_btn.config(state='disabled', text=\"Converting...\")",
+      "match": "self.convert_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 356,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=f\"Converting: {filename} ({completed}/{total})\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 363,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.convert_btn.config(state='normal', text=\"\ud83d\ude80 Start Batch Conversion\")",
+      "match": "self.convert_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 365,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=f\"Complete! {summary['completed']}/{summary['total_queued']} files converted\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 139,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "'C:\\\\': '/Users/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 151,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "'C:\\\\': '/home/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\comprehensive_bug_hunter.py",
+      "line": 74,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "'description': '# eval()  # Disabled for security usage is dangerous'",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\macos_optimizer.py",
+      "line": 205,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "# eval()  # Disabled for security usage is dangerous",
+      "code": "if 'eval(' in code or 'exec(' in code:",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\macos_optimizer.py",
+      "line": 317,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "path = \"C:\\\\\\\\Users\\\\\\\\test\\\\\\\\file.txt\"",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 366,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.start_btn.config(state='disabled')",
+      "match": "self.start_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 367,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.stop_btn.config(state='normal')",
+      "match": "self.stop_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 368,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=\"Monitoring active...\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 373,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.start_btn.config(state='normal')",
+      "match": "self.start_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 374,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.stop_btn.config(state='disabled')",
+      "match": "self.stop_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 375,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=\"Monitoring stopped\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 279,
+      "type": "unclosed_files",
+      "severity": "medium",
+      "description": "Files should be opened with context managers",
+      "code": "urllib.request.urlopen('https://pypi.org', timeout=10)",
+      "match": "open('https://pypi.org', timeout=10)"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\template_manager.py",
+      "line": 60,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "\"pattern\": r\"C:\\\\\\\\\",",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ultra_validator.py",
+      "line": 297,
+      "type": "unclosed_files",
+      "severity": "medium",
+      "description": "Files should be opened with context managers",
+      "code": "if 'open(' in content and 'with' not in content:",
+      "match": "open(' in content and 'with' not in content:\n            self.warnings.append({\n                'type': 'resource_management',\n                'message': 'File operations without context manager',\n                'suggestion': 'Use \"with open()"
+    }
+  ],
+  "fixes": [],
+  "warnings": [],
+  "suggestions": []
+}

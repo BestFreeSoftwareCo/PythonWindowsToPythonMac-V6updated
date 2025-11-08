@@ -92,7 +92,7 @@ class UserBehaviorAnalyzer:
             try:
                 with open(model_file, 'rb') as f:
                     self.error_prediction_model = pickle.load(f)
-            except:
+            except Exception as e:
                 pass  # Use default model
     
     def record_session(self, session_data: Dict):
@@ -271,7 +271,7 @@ class UserBehaviorAnalyzer:
         try:
             with open(model_file, 'wb') as f:
                 pickle.dump(self.error_prediction_model, f)
-        except:
+        except Exception as e:
             pass  # Continue without saving
 
 class AIAssistant:
@@ -495,6 +495,7 @@ def create_ai_chat_interface():
         print()
         
         while True:
+            time.sleep(0.01)  # CPU-friendly delay
             user_input = input("You: ").strip()
             
             if user_input.lower() in ['quit', 'exit', 'bye']:

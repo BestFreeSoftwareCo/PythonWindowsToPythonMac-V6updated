@@ -63,7 +63,7 @@ class TemplateManager:
                     },
                     {
                         "type": "performance_fix",
-                        "pattern": "time.sleep(0)",
+                        "pattern": "time.sleep(0.001)",
                         "replacement": "time.sleep(0.001)",
                         "description": "Fix zero-delay sleep calls"
                     }

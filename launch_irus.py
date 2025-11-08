@@ -72,11 +72,12 @@ def show_error_dialog(title, message, details=None):
         
         messagebox.showerror(title, full_message)
         root.destroy()
-    except:
+    except Exception as e:
         # Fallback to console output
         print(f"❌ {title}: {message}")
         if details:
             print(f"Details: {details}")
+        print(f"GUI Error: {e}")
 
 def launch_irus():
     """Launch the IRUS application"""

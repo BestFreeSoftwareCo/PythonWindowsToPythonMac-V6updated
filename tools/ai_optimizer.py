@@ -163,7 +163,7 @@ class AICodeOptimizer:
                         optimization['optimized'] = rule['replacement'](match)
                     else:
                         optimization['optimized'] = rule['replacement']
-                except:
+                except Exception as e:
                     optimization['optimized'] = "Manual optimization required"
                 
                 optimizations.append(optimization)
@@ -330,7 +330,7 @@ class AICodeOptimizer:
                 try:
                     optimized_code = optimized_code.replace(opt['original'], opt['optimized'])
                     applied_optimizations.append(opt)
-                except:
+                except Exception as e:
                     pass
         
         return optimized_code, applied_optimizations

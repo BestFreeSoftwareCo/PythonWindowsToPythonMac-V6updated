@@ -580,7 +580,7 @@ class SystemVulnerabilityScanner:
                     'message': 'System directories are writable',
                     'suggestion': 'Check file permissions'
                 })
-        except:
+        except Exception as e:
             pass
         
         # Check for running processes
@@ -593,7 +593,7 @@ class SystemVulnerabilityScanner:
                         'message': f'Suspicious process detected: {proc.info["name"]}',
                         'suggestion': 'Investigate running processes'
                     })
-        except:
+        except Exception as e:
             pass
         
         return vulnerabilities
@@ -620,7 +620,7 @@ class SystemVulnerabilityScanner:
                         'suggestion': 'Review open ports and services'
                     })
                 sock.close()
-        except:
+        except Exception as e:
             pass
         
         return vulnerabilities

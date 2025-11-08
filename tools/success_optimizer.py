@@ -99,7 +99,7 @@ class SuccessOptimizer:
                         'command': f'{sys.executable} -m pip install --upgrade pip',
                         'auto_apply': True
                     })
-        except:
+        except Exception as e:
             pass
     
     def check_package_optimizations(self):
@@ -120,7 +120,7 @@ class SuccessOptimizer:
                     'auto_apply': False,
                     'details': result.stdout
                 })
-        except:
+        except Exception as e:
             pass
         
         # Check pip cache size
@@ -141,7 +141,7 @@ class SuccessOptimizer:
                             'command': f'{sys.executable} -m pip cache purge',
                             'auto_apply': True
                         })
-        except:
+        except Exception as e:
             pass
     
     def check_performance_optimizations(self):
@@ -220,7 +220,7 @@ class SuccessOptimizer:
                     'command': 'xcode-select --install',
                     'auto_apply': False
                 })
-        except:
+        except Exception as e:
             pass
         
         # Check Homebrew
@@ -250,9 +250,9 @@ class SuccessOptimizer:
                             'command': 'brew update && brew upgrade',
                             'auto_apply': False
                         })
-                except:
+                except Exception as e:
                     pass
-        except:
+        except Exception as e:
             pass
         
         # Check for Apple Silicon optimizations
@@ -289,7 +289,7 @@ class SuccessOptimizer:
                     'command': 'Consider using a PyPI mirror or better internet connection',
                     'auto_apply': False
                 })
-        except:
+        except Exception as e:
             self.optimizations.append({
                 'type': 'network_connectivity',
                 'priority': 'critical',

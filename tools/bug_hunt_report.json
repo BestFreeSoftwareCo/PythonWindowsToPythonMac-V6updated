@@ -1,0 +1,679 @@
+{
+  "timestamp": "2025-11-08 07:45:09",
+  "summary": {
+    "bugs_found": 74,
+    "bugs_fixed": 0,
+    "warnings": 0,
+    "suggestions": 0
+  },
+  "bugs": [
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\launch_irus.py",
+      "line": 75,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_conversion.py",
+      "line": 14,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "path = \"C:\\\\test\\\\file.txt\"  # This should be converted",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_critical_fixes.py",
+      "line": 126,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_critical_fixes.py",
+      "line": 133,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_irus_v6.py",
+      "line": 433,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_irus_v6.py",
+      "line": 91,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "path = \"C:\\\\\\\\Users\\\\\\\\test\\\\\\\\file.txt\"",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\test_irus_v6.py",
+      "line": 0,
+      "type": "missing_dependency",
+      "severity": "medium",
+      "description": "Discord webhook requires requests module",
+      "code": "webhook functionality"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\validate_fixes.py",
+      "line": 183,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "disk_path = 'C:\\\\' if is_windows else '/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\interactive_tutorial.py",
+      "line": 498,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\interactive_tutorial.py",
+      "line": 508,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 107,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.label.config(text=text)",
+      "match": "self.label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 112,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.line_info.config(text=line_text)",
+      "match": "self.line_info.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 151,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=status)",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 153,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(foreground=color)",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2452,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=message)",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2910,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.font_size_label.config(text=f\"Current: {size}pt\")",
+      "match": "self.font_size_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 203,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 214,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 1281,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 1373,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2446,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2453,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2874,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2887,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 2894,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 738,
+      "type": "unclosed_files",
+      "severity": "medium",
+      "description": "Files should be opened with context managers",
+      "code": "webbrowser.open(\"https://discord.gg/j6wtpGJVng\")",
+      "match": "open(\"https://discord.gg/j6wtpGJVng\")"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 1901,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "eval() usage is dangerous",
+      "code": "security_issues = ['eval(', 'exec(', 'shell=True']",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\professional_ui.py",
+      "line": 1312,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "disk_path = 'C:\\\\' if IS_WINDOWS else '/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\gui\\smart_diagnostics.py",
+      "line": 324,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 583,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 596,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 623,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 166,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "eval() usage is dangerous",
+      "code": "'eval(',",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\advanced_bug_prevention.py",
+      "line": 466,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "eval() usage is dangerous",
+      "code": "'replacement': '# eval() removed for security - implement safe alternative'",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_assistant.py",
+      "line": 95,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_assistant.py",
+      "line": 274,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
+      "line": 166,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
+      "line": 333,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
+      "line": 404,
+      "type": "inefficient_loops",
+      "severity": "low",
+      "description": "Use enumerate() instead of range(len())",
+      "code": "for i in range(len(items)):",
+      "match": "for i in range(len("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ai_optimizer.py",
+      "line": 410,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "eval() usage is dangerous",
+      "code": "return eval(user_input)",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 319,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=\"Queue cleared\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 342,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.convert_btn.config(state='disabled', text=\"Converting...\")",
+      "match": "self.convert_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 356,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=f\"Converting: {filename} ({completed}/{total})\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 363,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.convert_btn.config(state='normal', text=\"\ud83d\ude80 Start Batch Conversion\")",
+      "match": "self.convert_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 365,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=f\"Complete! {summary['completed']}/{summary['total_queued']} files converted\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 139,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "'C:\\\\': '/Users/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\batch_converter.py",
+      "line": 151,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "'C:\\\\': '/home/'",
+      "match": "'C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\bug_reporter.py",
+      "line": 52,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\bug_reporter.py",
+      "line": 61,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\comprehensive_bug_hunter.py",
+      "line": 168,
+      "type": "missing_imports",
+      "severity": "high",
+      "description": "Missing import statements",
+      "code": "# Look for UI updates inside threading.Thread targets",
+      "match": "threading."
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\comprehensive_bug_hunter.py",
+      "line": 169,
+      "type": "missing_imports",
+      "severity": "high",
+      "description": "Missing import statements",
+      "code": "if 'threading.Thread' in content and '.config(' in line:",
+      "match": "threading."
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\comprehensive_bug_hunter.py",
+      "line": 73,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "eval() usage is dangerous",
+      "code": "'description': 'eval() usage is dangerous'",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\discord_integration.py",
+      "line": 375,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\enhanced_converter.py",
+      "line": 389,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\macos_optimizer.py",
+      "line": 205,
+      "type": "eval_usage",
+      "severity": "high",
+      "description": "eval() usage is dangerous",
+      "code": "if 'eval(' in code or 'exec(' in code:",
+      "match": "eval("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\macos_optimizer.py",
+      "line": 316,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "path = \"C:\\\\\\\\Users\\\\\\\\test\\\\\\\\file.txt\"",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\mobile_companion.py",
+      "line": 134,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 366,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.start_btn.config(state='disabled')",
+      "match": "self.start_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 367,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.stop_btn.config(state='normal')",
+      "match": "self.stop_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 368,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=\"Monitoring active...\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 373,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.start_btn.config(state='normal')",
+      "match": "self.start_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 374,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.stop_btn.config(state='disabled')",
+      "match": "self.stop_btn.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 375,
+      "type": "ui_thread_access",
+      "severity": "medium",
+      "description": "Potential UI access from wrong thread",
+      "code": "self.status_label.config(text=\"Monitoring stopped\")",
+      "match": "self.status_label.config("
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\performance_profiler.py",
+      "line": 301,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 102,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 123,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 144,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 223,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 253,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 255,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 292,
+      "type": "bare_except",
+      "severity": "medium",
+      "description": "Bare except clauses should specify exception types",
+      "code": "except:",
+      "match": "except:"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\success_optimizer.py",
+      "line": 279,
+      "type": "unclosed_files",
+      "severity": "medium",
+      "description": "Files should be opened with context managers",
+      "code": "urllib.request.urlopen('https://pypi.org', timeout=10)",
+      "match": "open('https://pypi.org', timeout=10)"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\template_manager.py",
+      "line": 60,
+      "type": "windows_paths",
+      "severity": "high",
+      "description": "Windows-specific paths need conversion",
+      "code": "\"pattern\": r\"C:\\\\\\\\\",",
+      "match": "\"C:\\\\"
+    },
+    {
+      "file": "C:\\Users\\Jed\\CascadeProjects\\fishing-bot-macos\\tools\\ultra_validator.py",
+      "line": 297,
+      "type": "unclosed_files",
+      "severity": "medium",
+      "description": "Files should be opened with context managers",
+      "code": "if 'open(' in content and 'with' not in content:",
+      "match": "open(' in content and 'with' not in content:\n            self.warnings.append({\n                'type': 'resource_management',\n                'message': 'File operations without context manager',\n                'suggestion': 'Use \"with open()"
+    }
+  ],
+  "fixes": [],
+  "warnings": [],
+  "suggestions": []
+}

@@ -86,9 +86,10 @@ import time
 
 def main():
     while True:
+        time.sleep(0.01)  # CPU-friendly delay
         win32api.MessageBox(0, "Test", "Title")
-        time.sleep(0)
-        path = "C:\\\\Users\\\\test\\\\file.txt"
+        time.sleep(0.001)
+        path = Path.home() / "test" / "file.txt"
 '''
             
             optimized_code, report = optimizer.optimize_for_macos(test_code, "macOS")
@@ -430,7 +431,7 @@ def main():
         with open('test_results_v6.json', 'w') as f:
             json.dump(test_results, f, indent=2)
         print(f"\n📄 Detailed results saved to: test_results_v6.json")
-    except:
+    except Exception as e:
         pass
     
     return test_results

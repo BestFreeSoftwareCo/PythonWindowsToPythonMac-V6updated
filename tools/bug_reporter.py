@@ -49,7 +49,7 @@ class BugReporter:
                     result = subprocess.run(['brew', '--version'], capture_output=True)
                     self.system_info['homebrew_available'] = result.returncode == 0
                     
-                except:
+                except Exception as e:
                     pass
             
             # Python packages
@@ -58,7 +58,7 @@ class BugReporter:
                                       capture_output=True, text=True)
                 if result.returncode == 0:
                     self.system_info['installed_packages'] = result.stdout
-            except:
+            except Exception as e:
                 pass
             
             # Memory and disk info

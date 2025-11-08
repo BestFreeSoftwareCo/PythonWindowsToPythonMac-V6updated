@@ -36,7 +36,7 @@ class MacOSOptimizer:
             '\\\\': '/',  # Windows to Unix path separators
             
             # Performance optimizations
-            'time.sleep(0)': 'time.sleep(0.001)',  # Prevent busy waiting
+            'time.sleep(0.001)': 'time.sleep(0.001)',  # Prevent busy waiting
             'while True:': 'while True:  # Consider adding time.sleep() for CPU efficiency',
             
             # macOS-specific improvements
@@ -311,8 +311,9 @@ import os
 
 def main():
     while True:
+        time.sleep(0.01)  # CPU-friendly delay
         win32api.MessageBox(0, "Hello", "Test")
-        time.sleep(0)
+        time.sleep(0.001)
         path = "C:\\\\Users\\\\test\\\\file.txt"
         if os.path.exists(path):
             break

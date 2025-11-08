@@ -495,7 +495,7 @@ Ready to start your first conversion?''',
                         self.tutorial_window.after(1500, lambda: update_progress(index + 1))
                     else:
                         self.tutorial_window.after(1500, lambda: self.finish_package_demo())
-                except:
+                except Exception as e:
                     pass  # Widget destroyed
         
         update_progress()
@@ -505,7 +505,7 @@ Ready to start your first conversion?''',
         try:
             self.package_progress['value'] = 5
             self.package_status.config(text="✅ All packages installed successfully!")
-        except:
+        except Exception as e:
             pass
     
     def add_verification_demo(self, parent):

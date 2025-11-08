@@ -372,7 +372,7 @@ class MobileCompanionBot:
             
             return response.status_code == 204
             
-        except:
+        except Exception as e:
             return False
 
 # Integration functions for existing systems
@@ -412,6 +412,7 @@ def create_feedback_system():
         
         # Get rating
         while True:
+            time.sleep(0.01)  # CPU-friendly delay
             try:
                 rating = int(input("Rate your experience (1-5 stars): "))
                 if 1 <= rating <= 5:

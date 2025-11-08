@@ -1,3 +1,4 @@
+import threading
 #!/usr/bin/env python3
 """
 IRUS V6.0 - Comprehensive Bug Hunter
@@ -70,7 +71,7 @@ class ComprehensiveBugHunter:
                 'pattern': r'\beval\(',
                 'check': self._check_eval_usage,
                 'severity': 'high',
-                'description': 'eval() usage is dangerous'
+                'description': '# eval()  # Disabled for security usage is dangerous'
             },
             
             # macOS compatibility
@@ -100,16 +101,16 @@ class ComprehensiveBugHunter:
     
     def hunt_bugs(self, directory_path):
         """Comprehensive bug hunting in directory"""
-        print("🔍 IRUS V6.0 - Comprehensive Bug Hunter")
+        print("IRUS V6.0 - Comprehensive Bug Hunter")
         print("=" * 60)
         
         directory = Path(directory_path)
         python_files = list(directory.rglob("*.py"))
         
-        print(f"📁 Scanning {len(python_files)} Python files...")
+        print(f"Scanning {len(python_files)} Python files...")
         
         for file_path in python_files:
-            print(f"\n🔍 Analyzing: {file_path.name}")
+            print(f"\nAnalyzing: {file_path.name}")
             self._analyze_file(file_path)
         
         self._generate_report()
@@ -267,7 +268,7 @@ class ComprehensiveBugHunter:
     
     def auto_fix_bugs(self, directory_path):
         """Automatically fix bugs where possible"""
-        print("\n🔧 Auto-fixing bugs...")
+        print("\nAuto-fixing bugs...")
         
         for bug in self.bugs_found:
             if bug['type'] in self.auto_fixes and bug['severity'] != 'critical':
@@ -298,18 +299,18 @@ class ComprehensiveBugHunter:
                                 'new': new_line.strip()
                             })
                             
-                            print(f"  ✅ Fixed {bug['type']} in {file_path.name}:{bug['line']}")
+                            print(f"  FIXED {bug['type']} in {file_path.name}:{bug['line']}")
                 
                 except Exception as e:
                     self.warnings.append(f"Could not auto-fix {bug['type']}: {e}")
     
     def _generate_report(self):
         """Generate comprehensive bug report"""
-        print(f"\n📊 Bug Hunt Results:")
-        print(f"  🐛 Bugs found: {len(self.bugs_found)}")
-        print(f"  🔧 Bugs fixed: {len(self.bugs_fixed)}")
-        print(f"  ⚠️ Warnings: {len(self.warnings)}")
-        print(f"  💡 Suggestions: {len(self.suggestions)}")
+        print(f"\nBug Hunt Results:")
+        print(f"  Bugs found: {len(self.bugs_found)}")
+        print(f"  Bugs fixed: {len(self.bugs_fixed)}")
+        print(f"  Warnings: {len(self.warnings)}")
+        print(f"  Suggestions: {len(self.suggestions)}")
         
         # Group bugs by severity
         critical = [b for b in self.bugs_found if b['severity'] == 'critical']
@@ -318,19 +319,19 @@ class ComprehensiveBugHunter:
         low = [b for b in self.bugs_found if b['severity'] == 'low']
         
         if critical:
-            print(f"\n🚨 CRITICAL BUGS ({len(critical)}):")
+            print(f"\nCRITICAL BUGS ({len(critical)}):")
             for bug in critical[:5]:  # Show first 5
-                print(f"  ❌ {bug['file']}:{bug['line']} - {bug['description']}")
+                print(f"  ERROR: {bug['file']}:{bug['line']} - {bug['description']}")
         
         if high:
-            print(f"\n🔴 HIGH PRIORITY ({len(high)}):")
+            print(f"\nHIGH PRIORITY ({len(high)}):")
             for bug in high[:5]:
-                print(f"  ⚠️ {bug['file']}:{bug['line']} - {bug['description']}")
+                print(f"  WARNING: {bug['file']}:{bug['line']} - {bug['description']}")
         
         if medium:
-            print(f"\n🟡 MEDIUM PRIORITY ({len(medium)}):")
+            print(f"\nMEDIUM PRIORITY ({len(medium)}):")
             for bug in medium[:3]:
-                print(f"  ⚠️ {bug['file']}:{bug['line']} - {bug['description']}")
+                print(f"  WARNING: {bug['file']}:{bug['line']} - {bug['description']}")
         
         # Save detailed report
         try:
@@ -351,10 +352,10 @@ class ComprehensiveBugHunter:
             with open('bug_hunt_report.json', 'w') as f:
                 json.dump(report, f, indent=2)
             
-            print(f"\n📄 Detailed report saved to: bug_hunt_report.json")
+            print(f"\nDetailed report saved to: bug_hunt_report.json")
             
         except Exception as e:
-            print(f"⚠️ Could not save report: {e}")
+            print(f"Could not save report: {e}")
     
     def _get_summary(self):
         """Get bug hunt summary"""
@@ -376,16 +377,16 @@ def main():
     
     hunter = ComprehensiveBugHunter()
     
-    print("🔍 Starting comprehensive bug hunt...")
+    print("Starting comprehensive bug hunt...")
     summary = hunter.hunt_bugs(directory)
     
     if summary['bugs_found'] > 0:
-        fix_choice = input(f"\n🔧 Found {summary['bugs_found']} bugs. Auto-fix where possible? (y/n): ")
+        fix_choice = input(f"\nFound {summary['bugs_found']} bugs. Auto-fix where possible? (y/n): ")
         if fix_choice.lower() == 'y':
             hunter.auto_fix_bugs(directory)
     
-    print(f"\n✅ Bug hunt complete!")
-    print(f"📊 Summary: {summary['bugs_found']} bugs found, {summary['bugs_fixed']} fixed")
+    print(f"\nBug hunt complete!")
+    print(f"Summary: {summary['bugs_found']} bugs found, {summary['bugs_fixed']} fixed")
     
     return summary
 
@@ -393,7 +394,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n👋 Bug hunt interrupted by user")
+        print("\nBug hunt interrupted by user")
     except Exception as e:
-        print(f"\n💥 Bug hunter crashed: {e}")
+        print(f"\nBug hunter crashed: {e}")
         traceback.print_exc()

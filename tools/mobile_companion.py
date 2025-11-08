@@ -131,7 +131,7 @@ class MobileCompanionBot:
                     if 'fishing_macro' in cmdline.lower() or 'fishing_bot' in cmdline.lower():
                         macro_running = True
                         break
-                except:
+                except Exception as e:
                     continue
             
             # Status change detection

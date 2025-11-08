@@ -321,7 +321,7 @@ class SmartDiagnostics:
                         if len(parts) >= 2:
                             packages[parts[0]] = parts[1]
                 return packages
-        except:
+        except Exception as e:
             pass
         return {}
     

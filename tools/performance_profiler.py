@@ -298,7 +298,7 @@ class PerformanceProfilerGUI:
             ttk.Label(info_frame, text=f"CPU Cores: {cpu_count}").pack()
             ttk.Label(info_frame, text=f"Total RAM: {memory_total:.1f} GB").pack()
             ttk.Label(info_frame, text=f"Platform: {sys.platform}").pack()
-        except:
+        except Exception as e:
             ttk.Label(info_frame, text="System info unavailable").pack()
         
         # Performance graph placeholder

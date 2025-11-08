@@ -121,16 +121,16 @@ def test_log_message_safety():
                 # Only update log_text if it exists
                 if hasattr(self, 'log_text'):
                     try:
-                        self.log_text.insert('end', f"{formatted_message}\n")
+                        self.log_text.insert('end', message + '\n')
                         self.log_text.see('end')
-                    except:
+                    except Exception:
                         pass
                 
                 # Only update status_label if it exists
                 if hasattr(self, 'status_label'):
                     try:
                         self.status_label.config(text=message)
-                    except:
+                    except Exception:
                         pass
                 
                 # Fallback to console if UI components aren't ready

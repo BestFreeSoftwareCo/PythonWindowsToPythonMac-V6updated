@@ -179,8 +179,9 @@ def test_cross_platform():
         
         print(f"  ✅ Platform detected: {current_platform}")
         
-        # Test disk path selection
-        disk_path = 'C:\\' if is_windows else '/'
+        # Test disk path selection (cross-platform)
+        from pathlib import Path
+        disk_path = Path.cwd().anchor  # Gets root drive on any platform
         print(f"  ✅ Disk path: {disk_path}")
         
         return True

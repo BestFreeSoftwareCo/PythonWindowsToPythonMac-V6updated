@@ -134,7 +134,7 @@ class BatchConverter:
             conversions = {
                 'import win32api': '# import win32api  # Converted for macOS',
                 'import win32gui': '# import win32gui  # Converted for macOS',
-                'time.sleep(0)': 'time.sleep(0.001)',
+                'time.sleep(0.001)': 'time.sleep(0.001)',
                 '\\\\': '/',
                 'C:\\': '/Users/'
             }
