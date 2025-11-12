@@ -1,4 +1,4 @@
-# 🚀 IRUS V6.0 - Intelligent Rewrite and Upgrade System
+# 🚀 IRUS V6.0 - Intelligent Rewrite and Upgrade System - **IM AWARE OF BUGS AND IM FIXING THEM!**
 
 ## The Ultimate Python Script Converter for macOS
 **Version 6.0** - *Professional macOS Optimization with Enhanced Features*
